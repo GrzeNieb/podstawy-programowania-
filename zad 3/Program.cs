@@ -1,26 +1,34 @@
-﻿char znak = ' ';
-char znak1 = '*';
-int temp;
-int temp2;
-int temp3;
-int temp4;
+﻿char blankspace = ' ';
+char star = '*';
+int star_am;
+int Theight_check_h;
+int Theight_static;
+int blankspace_am;
 int temp5=0;
-int temp6=0;
-int.TryParse(Console.ReadLine(), out  temp2);
-int Theight = temp2;
-if (temp2>2 && temp2<10){
-    temp3=(Theight*2)-1;
+int.TryParse(Console.ReadLine(), out  Theight_check_h);
+int Theight = Theight_check_h;
+if (Theight_check_h>2 && Theight_check_h<10){
+    Theight_static=(Theight*2)-1;
 for (int i =0; i<= Theight ; i++)
 {
     temp5++;
-    temp = (temp5*2)-1;
-    temp4 = (temp3-temp)/2;
-    string line = new string(znak1,temp);
-    string blank = new string(znak,temp4);
-    Console.WriteLine(blank+line+blank);
-    temp=temp-2;
+    star_am = (temp5*2)-1;
+    blankspace_am = (Theight_static-star_am)/2;
+        if (blankspace_am >= 0)
+        {
+            string line = new string(star,star_am);
+            string blank = new string(blankspace,blankspace_am);
+            Console.WriteLine(blank+line+blank);
+            star_am=star_am-2;
+        }
+        else
+        {
+            string line = new string(star,1);
+            string blank = new string(blankspace,(Theight_static-1)/2);
+            Console.WriteLine(blank+line+blank);
+        }
+    
 }
-
 }
 else
 {
